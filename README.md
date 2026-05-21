@@ -84,7 +84,7 @@ Cada projeto tem uma página dedicada com:
 - Imagens ou vídeos curtos (em desenvolvimento)
 
 ### Exemplos:
-1. **Finvita** — Plataforma de gestão financeira com automações
+1. **JLA Metal Works** — ERP de caldeiraria industrial (clientes, propostas técnicas, leads e auditoria)
 2. **Vó Maria** — Site de confeitaria artesanal
 3. **Lisboemia** — Automação de conteúdo com n8n
 4. **Portfólio pessoal** — Este próprio site
