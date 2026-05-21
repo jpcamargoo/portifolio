@@ -219,7 +219,7 @@ export default function Header() {
           
           {/* GitHub Link */}
           <motion.a
-            href="https://github.com/Joao-pdpc"
+            href="https://github.com/jpcamargoo"
             target="_blank"
             rel="noopener noreferrer"
             className="p-2 rounded-lg bg-slate-900/[0.04] dark:bg-white/5 hover:bg-slate-900/[0.08] dark:hover:bg-white/10 border border-slate-900/10 dark:border-white/10 text-slate-700 dark:text-gray-300 hover:text-slate-900 dark:hover:text-white transition-all"
@@ -328,7 +328,7 @@ export default function Header() {
                     <ThemeToggle />
                   </div>
                   <a
-                    href="https://github.com/Joao-pdpc"
+                    href="https://github.com/jpcamargoo"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-4 py-3 rounded-lg bg-slate-900/[0.04] border border-slate-900/10 text-slate-700 hover:bg-slate-900/[0.08] hover:border-slate-900/20 hover:text-slate-900 dark:bg-white/5 dark:border-white/10 dark:text-gray-300 dark:hover:bg-white/10 dark:hover:border-purple-500/30 dark:hover:text-white transition-all flex items-center gap-2"
