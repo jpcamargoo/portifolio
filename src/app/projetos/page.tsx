@@ -96,8 +96,8 @@ export default function ProjetosPage() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1, duration: 0.6 }}
-          role="tablist"
         >
+          <div role="tablist" className="flex flex-wrap gap-2 justify-center">
           {filterChips.map((chip) => {
             const active = filter === chip.value;
             return (
@@ -105,7 +105,7 @@ export default function ProjetosPage() {
                 key={chip.value}
                 onClick={() => setFilter(chip.value)}
                 role="tab"
-                aria-selected={active}
+                aria-selected={active ? 'true' : 'false'}
                 className={`px-4 py-1.5 rounded-full text-xs uppercase tracking-wider border transition-colors ${
                   active
                     ? 'border-slate-900 bg-slate-900 text-white dark:border-purple-500/60 dark:bg-purple-500/10 dark:text-purple-300'
@@ -116,6 +116,7 @@ export default function ProjetosPage() {
               </button>
             );
           })}
+          </div>
         </motion.div>
 
         <div className="space-y-8 max-w-4xl mx-auto">
