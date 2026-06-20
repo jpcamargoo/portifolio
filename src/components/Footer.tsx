@@ -8,11 +8,11 @@ export default function Footer() {
   const { t } = useLanguage();
 
   return (
-    <footer className="border-t border-slate-900/10 dark:border-white/10 mt-20">
+    <footer className="border-t border-slate-900/10 dark:border-pm-border mt-20">
       <div className="container mx-auto px-6 py-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <motion.p
-            className="text-sm text-slate-600 dark:text-gray-300"
+            className="text-sm text-slate-600 dark:text-pm-muted"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
           >
@@ -24,7 +24,7 @@ export default function Footer() {
               href="https://github.com/Joao-pdpc"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-700 dark:text-gray-300 hover:text-slate-900 dark:hover:text-purple-500 transition-theme"
+              className="text-slate-700 dark:text-pm-muted hover:text-slate-900 dark:hover:text-pm-accent transition-theme"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               aria-label="GitHub"
@@ -38,7 +38,7 @@ export default function Footer() {
               href="https://linkedin.com/in/joao-pdpc"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-700 dark:text-gray-300 hover:text-slate-900 dark:hover:text-purple-500 transition-theme"
+              className="text-slate-700 dark:text-pm-muted hover:text-slate-900 dark:hover:text-pm-accent transition-theme"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               aria-label="LinkedIn"

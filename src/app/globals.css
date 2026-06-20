@@ -5,10 +5,19 @@
 @tailwind utilities;
 
 :root {
-  --cosmic-dark: #0a0e27;
-  --cosmic-darker: #050813;
-  --cosmic-light: #f5f5f7;
-  --cosmic-lighter: #ffffff;
+  --pm-bg:       #0B0B0D;
+  --pm-surface:  #111113;
+  --pm-border:   #1A1A1C;
+  --pm-text:     #E6E6E6;
+  --pm-muted:    #A1A1A1;
+  --pm-accent:   #357FCC;
+  --pm-accent-h: #3F8FEA;
+
+  --pm-light-bg:      #FAFAFA;
+  --pm-light-surface: #FFFFFF;
+  --pm-light-border:  #E5E5E7;
+  --pm-light-text:    #111113;
+  --pm-light-muted:   #6B6B6E;
 }
 
 * {
@@ -29,8 +38,8 @@ body {
   z-index: 999;
   padding: 0.5rem 0.75rem;
   border-radius: 0.5rem;
-  background: #111827;
-  color: #ffffff;
+  background: #111113;
+  color: #E6E6E6;
   font-weight: 600;
   text-decoration: none;
   transition: top 0.2s ease;
@@ -43,7 +52,7 @@ body {
 a:focus-visible,
 button:focus-visible,
 [role='button']:focus-visible {
-  outline: 2px solid #22d3ee;
+  outline: 2px solid #357FCC;
   outline-offset: 3px;
   border-radius: 0.5rem;
 }
@@ -52,18 +61,16 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Playfair Display', serif;
 }
 
-/* Tema escuro - mais vibrante */
+/* Tema escuro — Dark Premium Minimal */
 .dark {
-  background: radial-gradient(ellipse at top, #1e1b4b 0%, #0a0e27 40%, #050813 100%);
-  color: #f5f5f7;
+  background-color: #0B0B0D;
+  color: #E6E6E6;
 }
 
-/* Tema claro - dark premium em fundo branco */
+/* Tema claro — Premium Minimal Light */
 .light {
-  background:
-    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(15, 23, 42, 0.05) 0%, transparent 70%),
-    linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
-  color: #0f172a;
+  background-color: #FAFAFA;
+  color: #111113;
 }
 
 /* Animações suaves */
@@ -73,32 +80,30 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Efeitos cósmicos aprimorados */
+/* Glow premium — acento azul */
 .cosmic-glow {
-  box-shadow: 
-    0 0 20px rgba(99, 102, 241, 0.3),
-    0 0 40px rgba(99, 102, 241, 0.1);
-  transition: box-shadow 0.3s ease;
+  box-shadow:
+    0 0 10px rgba(53, 127, 204, 0.10),
+    0 0 20px rgba(53, 127, 204, 0.04);
+  transition: box-shadow 0.4s ease;
 }
 
 .cosmic-glow:hover {
-  box-shadow: 
-    0 0 30px rgba(99, 102, 241, 0.5),
-    0 0 60px rgba(99, 102, 241, 0.2),
-    0 0 90px rgba(139, 92, 246, 0.1);
+  box-shadow:
+    0 0 14px rgba(53, 127, 204, 0.16),
+    0 0 28px rgba(53, 127, 204, 0.06);
 }
 
 .dark .cosmic-glow {
-  box-shadow: 
-    0 0 30px rgba(99, 102, 241, 0.5),
-    0 0 60px rgba(139, 92, 246, 0.2);
+  box-shadow:
+    0 0 12px rgba(53, 127, 204, 0.12),
+    0 0 24px rgba(53, 127, 204, 0.05);
 }
 
 .dark .cosmic-glow:hover {
-  box-shadow: 
-    0 0 40px rgba(99, 102, 241, 0.7),
-    0 0 80px rgba(139, 92, 246, 0.4),
-    0 0 120px rgba(167, 139, 250, 0.2);
+  box-shadow:
+    0 0 16px rgba(53, 127, 204, 0.22),
+    0 0 36px rgba(53, 127, 204, 0.08);
 }
 
 /* Clip path para hexágono */
@@ -109,10 +114,10 @@ h1, h2, h3, h4, h5, h6 {
 /* Animação de pulso */
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+    box-shadow: 0 0 10px rgba(53, 127, 204, 0.12);
   }
   50% {
-    box-shadow: 0 0 40px rgba(139, 92, 246, 0.8), 0 0 60px rgba(236, 72, 153, 0.3);
+    box-shadow: 0 0 18px rgba(53, 127, 204, 0.22), 0 0 32px rgba(53, 127, 204, 0.08);
   }
 }
 
@@ -134,7 +139,7 @@ h1, h2, h3, h4, h5, h6 {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(139, 92, 246, 0.3),
+    rgba(53, 127, 204, 0.2),
     transparent
   );
   background-size: 200% 100%;
@@ -173,33 +178,33 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Efeito glassmorphism */
 .glass {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.04);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .dark .glass {
-  background: rgba(10, 14, 39, 0.4);
+  background: rgba(17, 17, 19, 0.5);
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(139, 92, 246, 0.2);
+  border: 1px solid rgba(53, 127, 204, 0.15);
 }
 
 /* Scrollbar personalizada */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(10, 14, 39, 0.3);
+  background: #0B0B0D;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, rgba(139, 92, 246, 0.6), rgba(236, 72, 153, 0.6));
-  border-radius: 5px;
+  background: rgba(53, 127, 204, 0.35);
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, rgba(139, 92, 246, 0.9), rgba(236, 72, 153, 0.9));
+  background: rgba(53, 127, 204, 0.6);
 }

@@ -56,27 +56,27 @@ export default function Header() {
   }, [mobileMenuOpen]);
 
   const navItems = [
-    { 
-      href: '/', 
-      label: t('nav.home'), 
+    {
+      href: '/',
+      label: t('nav.home'),
       icon: (
         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
         </svg>
       )
     },
-    { 
-      href: '/sobre', 
-      label: t('nav.about'), 
+    {
+      href: '/sobre',
+      label: t('nav.about'),
       icon: (
         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
         </svg>
       )
     },
-    { 
-      href: '/projetos', 
-      label: t('nav.projects'), 
+    {
+      href: '/projetos',
+      label: t('nav.projects'),
       icon: (
         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
@@ -89,36 +89,36 @@ export default function Header() {
     <header
       ref={headerRef}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled 
-          ? 'backdrop-blur-xl bg-white/80 dark:bg-black/60 border-b border-slate-900/10 dark:border-purple-500/20 shadow-[0_4px_20px_-4px_rgba(15,23,42,0.08)] dark:shadow-lg dark:shadow-purple-500/10' 
-          : 'backdrop-blur-md bg-white/60 dark:bg-black/30 border-b border-slate-900/[0.06] dark:border-white/10'
+        scrolled
+          ? 'backdrop-blur-xl bg-white/80 dark:bg-pm-bg/90 border-b border-slate-900/10 dark:border-pm-border shadow-[0_4px_20px_-4px_rgba(15,23,42,0.08)] dark:shadow-lg dark:shadow-black/30'
+          : 'backdrop-blur-md bg-white/60 dark:bg-pm-bg/60 border-b border-slate-900/[0.06] dark:border-pm-border'
       }`}
     >
       {/* Elementos geométricos de fundo */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Linhas horizontais tech */}
-        <motion.div 
-          className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-slate-900/20 dark:via-purple-500/30 to-transparent"
+        {/* Linha horizontal tech */}
+        <motion.div
+          className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-slate-900/20 dark:via-pm-accent/20 to-transparent"
           animate={{ x: ['-100%', '100%'] }}
           transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
         />
-        
-        {/* Hexágonos decorativos */}
+
+        {/* Hexágono decorativo */}
         <div className="absolute right-10 top-1/2 -translate-y-1/2 w-8 h-8 opacity-20">
           <svg viewBox="0 0 100 100" className="w-full h-full">
-            <polygon 
-              points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5" 
-              fill="none" 
-              stroke="currentColor" 
+            <polygon
+              points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5"
+              fill="none"
+              stroke="currentColor"
               strokeWidth="2"
-              className="text-slate-700 dark:text-teal-500"
+              className="text-slate-700 dark:text-pm-accent"
             />
           </svg>
         </div>
-        
+
         {/* Círculo com pulse */}
-        <motion.div 
-          className="absolute left-1/3 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-amber-900/40 dark:bg-cyan-500/40"
+        <motion.div
+          className="absolute left-1/3 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-amber-900/40 dark:bg-pm-accent/40"
           animate={{ scale: [1, 1.5, 1], opacity: [0.4, 0.8, 0.4] }}
           transition={{ duration: 3, repeat: Infinity }}
         />
@@ -137,23 +137,23 @@ export default function Header() {
               <motion.div
                 className="absolute inset-0 rounded-lg"
                 style={{
-                  background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.3), rgba(20, 184, 166, 0.3))',
+                  background: 'linear-gradient(135deg, rgba(53, 127, 204, 0.3), rgba(63, 143, 234, 0.15))',
                   padding: '2px',
                 }}
                 animate={{ rotate: 360 }}
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
               >
-                <div className="w-full h-full rounded-lg bg-white/80 dark:bg-black/60 backdrop-blur-sm" />
+                <div className="w-full h-full rounded-lg bg-white/80 dark:bg-pm-bg/80 backdrop-blur-sm" />
               </motion.div>
-              
+
               {/* Conteúdo do logo */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center">
-                  <span className="block text-sm font-bold text-slate-900 dark:bg-gradient-to-br dark:from-purple-400 dark:via-teal-400 dark:to-cyan-400 dark:bg-clip-text dark:text-transparent">
+                  <span className="block text-sm font-bold text-slate-900 dark:text-pm-text">
                     JP
                   </span>
-                  <motion.div 
-                    className="w-4 h-[2px] mx-auto bg-slate-900 dark:bg-gradient-to-r dark:from-purple-500 dark:to-teal-500 mt-0.5"
+                  <motion.div
+                    className="w-4 h-[2px] mx-auto bg-slate-900 dark:bg-pm-accent mt-0.5"
                     animate={{ scaleX: [1, 1.3, 1] }}
                     transition={{ duration: 2, repeat: Infinity }}
                   />
@@ -161,14 +161,14 @@ export default function Header() {
               </div>
 
               {/* Glow effect on hover */}
-              <div className="absolute -inset-2 bg-gradient-to-r from-slate-900/0 dark:from-purple-500/0 dark:via-teal-500/0 dark:to-cyan-500/0 group-hover:from-slate-900/10 dark:group-hover:from-purple-500/20 dark:group-hover:via-teal-500/20 dark:group-hover:to-cyan-500/20 rounded-lg blur-xl transition-all duration-500 -z-10" />
+              <div className="absolute -inset-2 bg-pm-accent/0 group-hover:bg-pm-accent/10 rounded-lg blur-xl transition-all duration-500 -z-10" />
             </div>
-            
+
             <div>
-              <p className="text-xl font-bold text-slate-900 dark:bg-gradient-to-r dark:from-purple-400 dark:via-teal-400 dark:to-cyan-400 dark:bg-clip-text dark:text-transparent leading-tight tracking-tight">
+              <p className="text-xl font-bold text-slate-900 dark:text-pm-text leading-tight tracking-tight">
                 João Paulo Pereira
               </p>
-              <p className="text-[10px] text-slate-500 dark:text-gray-400 font-mono tracking-wider">
+              <p className="text-[10px] text-slate-500 dark:text-pm-muted font-mono tracking-wider">
                 FULL STACK DEV
               </p>
             </div>
@@ -184,7 +184,7 @@ export default function Header() {
                 <Link href={item.href} aria-current={isActive ? 'page' : undefined}>
                   <motion.div
                     className={`relative px-4 py-2 rounded-lg overflow-hidden group ${
-                      isActive ? 'text-slate-900 dark:text-white' : 'text-slate-600 dark:text-gray-300 hover:text-slate-900 dark:hover:text-white'
+                      isActive ? 'text-slate-900 dark:text-pm-text' : 'text-slate-600 dark:text-pm-muted hover:text-slate-900 dark:hover:text-pm-text'
                     }`}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
@@ -193,14 +193,14 @@ export default function Header() {
                     {isActive && (
                       <motion.div
                         layoutId="activeNav"
-                        className="absolute inset-0 bg-slate-900/[0.06] dark:bg-gradient-to-r dark:from-purple-500/20 dark:via-teal-500/20 dark:to-cyan-500/20 rounded-lg border border-slate-900/15 dark:border-purple-500/30"
+                        className="absolute inset-0 bg-slate-900/[0.06] dark:bg-pm-accent/10 rounded-lg border border-slate-900/15 dark:border-pm-accent/30"
                         transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                       />
                     )}
-                    
+
                     {/* Hover effect */}
-                    <div className="absolute inset-0 bg-slate-900/0 dark:bg-gradient-to-r dark:from-purple-500/0 dark:via-teal-500/0 dark:to-cyan-500/0 group-hover:bg-slate-900/[0.04] dark:group-hover:from-purple-500/10 dark:group-hover:via-teal-500/10 dark:group-hover:to-cyan-500/10 rounded-lg transition-all duration-300" />
-                    
+                    <div className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/[0.04] dark:group-hover:bg-pm-accent/8 rounded-lg transition-all duration-300" />
+
                     <span className="relative flex items-center gap-2 text-sm font-medium">
                       {item.icon}
                       {item.label}
@@ -216,13 +216,13 @@ export default function Header() {
         <div className="hidden md:flex items-center gap-3">
           <LanguageToggle />
           <ThemeToggle />
-          
+
           {/* GitHub Link */}
           <motion.a
             href="https://github.com/jpcamargoo"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 rounded-lg bg-slate-900/[0.04] dark:bg-white/5 hover:bg-slate-900/[0.08] dark:hover:bg-white/10 border border-slate-900/10 dark:border-white/10 text-slate-700 dark:text-gray-300 hover:text-slate-900 dark:hover:text-white transition-all"
+            className="p-2 rounded-lg bg-slate-900/[0.04] dark:bg-pm-surface hover:bg-slate-900/[0.08] dark:hover:bg-pm-accent/10 border border-slate-900/10 dark:border-pm-border dark:hover:border-pm-accent/30 text-slate-700 dark:text-pm-muted hover:text-slate-900 dark:hover:text-pm-text transition-all"
             whileHover={{ scale: 1.1, rotate: 5 }}
             whileTap={{ scale: 0.9 }}
             aria-label="GitHub"
@@ -241,7 +241,7 @@ export default function Header() {
 
         {/* Mobile Menu Button */}
         <motion.button
-          className="md:hidden p-2 rounded-lg bg-slate-900/[0.04] dark:bg-white/5 border border-slate-900/10 dark:border-white/10 text-slate-700 dark:text-gray-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-900/[0.08] dark:hover:bg-white/10 transition-all"
+          className="md:hidden p-2 rounded-lg bg-slate-900/[0.04] dark:bg-pm-surface border border-slate-900/10 dark:border-pm-border text-slate-700 dark:text-pm-muted hover:text-slate-900 dark:hover:text-pm-text hover:bg-slate-900/[0.08] dark:hover:bg-pm-accent/10 transition-all"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           whileTap={{ scale: 0.95 }}
           aria-label={mobileMenuOpen ? 'Fechar menu' : 'Abrir menu'}
@@ -264,7 +264,7 @@ export default function Header() {
         {mobileMenuOpen && (
           <motion.div
             id="mobile-nav-menu"
-            className="md:hidden absolute top-full left-0 right-0 backdrop-blur-xl bg-white/95 dark:bg-black/95 border-b border-slate-900/10 dark:border-purple-500/20 shadow-2xl shadow-slate-900/[0.08] dark:shadow-purple-500/10 overflow-hidden"
+            className="md:hidden absolute top-full left-0 right-0 backdrop-blur-xl bg-white/95 dark:bg-pm-surface border-b border-slate-900/10 dark:border-pm-border shadow-2xl shadow-slate-900/[0.08] dark:shadow-black/45 overflow-hidden"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
@@ -272,8 +272,8 @@ export default function Header() {
           >
             {/* Elementos decorativos no menu mobile */}
             <div className="absolute inset-0 pointer-events-none">
-              <div className="absolute top-0 left-0 w-40 h-40 bg-slate-900/[0.03] dark:bg-purple-500/5 rounded-full blur-3xl" />
-              <div className="absolute bottom-0 right-0 w-40 h-40 bg-amber-900/[0.03] dark:bg-teal-500/5 rounded-full blur-3xl" />
+              <div className="absolute top-0 left-0 w-40 h-40 bg-slate-900/[0.03] dark:bg-pm-accent/5 rounded-full blur-3xl" />
+              <div className="absolute bottom-0 right-0 w-40 h-40 bg-amber-900/[0.03] dark:bg-pm-accent/5 rounded-full blur-3xl" />
             </div>
 
             <ul className="container mx-auto px-6 py-6 space-y-2 relative">
@@ -289,8 +289,8 @@ export default function Header() {
                       <motion.div
                         className={`flex items-center gap-3 px-4 py-3 rounded-lg border transition-all ${
                           isActive
-                            ? 'bg-slate-900/[0.06] border-slate-900/20 text-slate-900 dark:bg-gradient-to-r dark:from-purple-500/20 dark:via-teal-500/20 dark:to-cyan-500/20 dark:border-purple-500/40 dark:text-white'
-                            : 'bg-slate-900/[0.03] border-slate-900/10 text-slate-700 hover:bg-slate-900/[0.06] hover:border-slate-900/20 hover:text-slate-900 dark:bg-white/5 dark:border-white/10 dark:text-gray-300 dark:hover:bg-white/10 dark:hover:border-purple-500/30 dark:hover:text-white'
+                            ? 'bg-slate-900/[0.06] border-slate-900/20 text-slate-900 dark:bg-pm-accent/10 dark:border-pm-accent/40 dark:text-pm-text'
+                            : 'bg-slate-900/[0.03] border-slate-900/10 text-slate-700 hover:bg-slate-900/[0.06] hover:border-slate-900/20 hover:text-slate-900 dark:bg-pm-bg/50 dark:border-pm-border dark:text-pm-muted dark:hover:bg-pm-accent/10 dark:hover:border-pm-accent/30 dark:hover:text-pm-text'
                         }`}
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -300,7 +300,7 @@ export default function Header() {
                         <span className="text-lg font-medium">{item.label}</span>
                         {isActive && (
                           <motion.div
-                            className="ml-auto w-2 h-2 rounded-full bg-slate-900 dark:bg-gradient-to-r dark:from-purple-500 dark:to-teal-500"
+                            className="ml-auto w-2 h-2 rounded-full bg-slate-900 dark:bg-pm-accent"
                             animate={{ scale: [1, 1.2, 1] }}
                             transition={{ duration: 2, repeat: Infinity }}
                           />
@@ -310,14 +310,14 @@ export default function Header() {
                   </li>
                 );
               })}
-              
+
               {/* Divider */}
               <li className="list-none" aria-hidden="true">
                 <motion.div
                   initial={{ opacity: 0, scaleX: 0 }}
                   animate={{ opacity: 1, scaleX: 1 }}
                   transition={{ delay: navItems.length * 0.1 }}
-                  className="h-[1px] bg-gradient-to-r from-transparent via-slate-900/20 dark:via-purple-500/30 to-transparent my-4"
+                  className="h-[1px] bg-gradient-to-r from-transparent via-slate-900/20 dark:via-pm-accent/20 to-transparent my-4"
                 />
               </li>
 
@@ -333,7 +333,7 @@ export default function Header() {
                     href="https://github.com/jpcamargoo"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-3 rounded-lg bg-slate-900/[0.04] border border-slate-900/10 text-slate-700 hover:bg-slate-900/[0.08] hover:border-slate-900/20 hover:text-slate-900 dark:bg-white/5 dark:border-white/10 dark:text-gray-300 dark:hover:bg-white/10 dark:hover:border-purple-500/30 dark:hover:text-white transition-all flex items-center gap-2"
+                    className="px-4 py-3 rounded-lg bg-slate-900/[0.04] border border-slate-900/10 text-slate-700 hover:bg-slate-900/[0.08] hover:border-slate-900/20 hover:text-slate-900 dark:bg-pm-bg/50 dark:border-pm-border dark:text-pm-muted dark:hover:bg-pm-accent/10 dark:hover:border-pm-accent/30 dark:hover:text-pm-text transition-all flex items-center gap-2"
                     aria-label="GitHub"
                   >
                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -345,7 +345,7 @@ export default function Header() {
                     href="https://linkedin.com/in/joao-pdpc"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-3 rounded-lg bg-slate-900/[0.04] border border-slate-900/10 text-slate-700 hover:bg-slate-900/[0.08] hover:border-slate-900/20 hover:text-slate-900 dark:bg-white/5 dark:border-white/10 dark:text-gray-300 dark:hover:bg-white/10 dark:hover:border-blue-500/30 dark:hover:text-white transition-all flex items-center gap-2"
+                    className="px-4 py-3 rounded-lg bg-slate-900/[0.04] border border-slate-900/10 text-slate-700 hover:bg-slate-900/[0.08] hover:border-slate-900/20 hover:text-slate-900 dark:bg-pm-bg/50 dark:border-pm-border dark:text-pm-muted dark:hover:bg-pm-accent/10 dark:hover:border-pm-accent/30 dark:hover:text-pm-text transition-all flex items-center gap-2"
                     aria-label="LinkedIn"
                   >
                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
