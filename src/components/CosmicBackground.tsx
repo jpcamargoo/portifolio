@@ -17,23 +17,20 @@ export default function CosmicBackground() {
 
   useEffect(() => {
     setMounted(true);
-    
-    // Detectar dispositivos móveis
+
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    
+
     checkMobile();
     window.addEventListener('resize', checkMobile);
-    
+
     const mobileViewport = window.innerWidth < 768;
     const lowPowerMode = mobileViewport || !!prefersReducedMotion;
 
-    // Reduzir elementos animados em dispositivos móveis/reduced motion
     const starCount = lowPowerMode ? 16 : 80;
     const particleCount = lowPowerMode ? 4 : 20;
-    
-    // Estrelas com tamanhos variados
+
     setStars(
       Array.from({ length: starCount }, () => ({
         top: `${Math.random() * 100}%`,
@@ -43,7 +40,6 @@ export default function CosmicBackground() {
         duration: 3 + Math.random() * 2,
       }))
     );
-    // Partículas flutuantes
     setParticles(
       Array.from({ length: particleCount }, () => ({
         top: `${Math.random() * 100}%`,
@@ -53,7 +49,7 @@ export default function CosmicBackground() {
         driftX: Math.sin(Math.random() * Math.PI * 2) * 30,
       }))
     );
-    
+
     return () => window.removeEventListener('resize', checkMobile);
   }, [prefersReducedMotion]);
 
@@ -66,23 +62,21 @@ export default function CosmicBackground() {
         <div className="absolute inset-0" style={{
           backgroundImage: isLight
             ? 'linear-gradient(rgba(15,23,42,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(15,23,42,0.4) 1px, transparent 1px)'
-            : 'linear-gradient(rgba(99, 102, 241, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(99, 102, 241, 0.3) 1px, transparent 1px)',
+            : 'linear-gradient(rgba(53, 127, 204, 0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(53, 127, 204, 0.2) 1px, transparent 1px)',
           backgroundSize: '50px 50px'
         }} />
       </div>
 
-      {/* Planetas maiores e mais vibrantes */}
-      
-      {/* Planeta 1 - Roxo Grande */}
+      {/* Planeta 1 */}
       {!isMobile && (
         <motion.div
           className="absolute w-96 h-96 rounded-full"
-          style={{ 
-            top: '5%', 
+          style={{
+            top: '5%',
             left: '0%',
             background: isLight
               ? 'radial-gradient(circle at 30% 30%, rgba(15, 23, 42, 0.07), rgba(15, 23, 42, 0.03), transparent)'
-              : 'radial-gradient(circle at 30% 30%, rgba(139, 92, 246, 0.4), rgba(99, 102, 241, 0.2), transparent)',
+              : 'radial-gradient(circle at 30% 30%, rgba(53, 127, 204, 0.35), rgba(53, 127, 204, 0.15), transparent)',
             filter: 'blur(60px)'
           }}
           animate={{
@@ -99,16 +93,16 @@ export default function CosmicBackground() {
         />
       )}
 
-      {/* Planeta 2 - Rosa Intenso */}
+      {/* Planeta 2 */}
       {!shouldSimplify && (
         <motion.div
           className="absolute w-80 h-80 rounded-full"
-          style={{ 
-            top: '60%', 
+          style={{
+            top: '60%',
             right: '5%',
             background: isLight
               ? 'radial-gradient(circle at 30% 30%, rgba(23, 37, 84, 0.07), rgba(23, 37, 84, 0.03), transparent)'
-              : 'radial-gradient(circle at 30% 30%, rgba(236, 72, 153, 0.5), rgba(219, 39, 119, 0.2), transparent)',
+              : 'radial-gradient(circle at 30% 30%, rgba(53, 127, 204, 0.25), rgba(53, 127, 204, 0.12), transparent)',
             filter: 'blur(50px)'
           }}
           animate={{
@@ -126,16 +120,16 @@ export default function CosmicBackground() {
         />
       )}
 
-      {/* Planeta 3 - Azul Elétrico */}
+      {/* Planeta 3 */}
       {!isMobile && (
         <motion.div
           className="absolute w-72 h-72 rounded-full"
-          style={{ 
-            bottom: '15%', 
+          style={{
+            bottom: '15%',
             left: '10%',
             background: isLight
               ? 'radial-gradient(circle at 30% 30%, rgba(15, 23, 42, 0.06), rgba(15, 23, 42, 0.02), transparent)'
-              : 'radial-gradient(circle at 30% 30%, rgba(59, 130, 246, 0.5), rgba(37, 99, 235, 0.2), transparent)',
+              : 'radial-gradient(circle at 30% 30%, rgba(53, 127, 204, 0.45), rgba(53, 127, 204, 0.2), transparent)',
             filter: 'blur(55px)'
           }}
           animate={{
@@ -153,16 +147,16 @@ export default function CosmicBackground() {
         />
       )}
 
-      {/* Planeta 4 - Ciano */}
+      {/* Planeta 4 */}
       {!shouldSimplify && (
         <motion.div
           className="absolute w-64 h-64 rounded-full"
-          style={{ 
-            top: '35%', 
+          style={{
+            top: '35%',
             left: '65%',
             background: isLight
               ? 'radial-gradient(circle at 30% 30%, rgba(23, 37, 84, 0.05), rgba(23, 37, 84, 0.02), transparent)'
-              : 'radial-gradient(circle at 30% 30%, rgba(34, 211, 238, 0.4), rgba(6, 182, 212, 0.2), transparent)',
+              : 'radial-gradient(circle at 30% 30%, rgba(53, 127, 204, 0.28), rgba(53, 127, 204, 0.12), transparent)',
             filter: 'blur(45px)'
           }}
           animate={{
@@ -180,16 +174,16 @@ export default function CosmicBackground() {
         />
       )}
 
-      {/* Planeta 5 - Âmbar */}
+      {/* Planeta 5 */}
       {!isMobile && (
         <motion.div
           className="absolute w-56 h-56 rounded-full"
-          style={{ 
-            top: '10%', 
+          style={{
+            top: '10%',
             right: '20%',
             background: isLight
               ? 'radial-gradient(circle at 30% 30%, rgba(120, 53, 15, 0.06), rgba(120, 53, 15, 0.02), transparent)'
-              : 'radial-gradient(circle at 30% 30%, rgba(245, 158, 11, 0.3), rgba(217, 119, 6, 0.15), transparent)',
+              : 'radial-gradient(circle at 30% 30%, rgba(53, 127, 204, 0.18), rgba(53, 127, 204, 0.08), transparent)',
             filter: 'blur(40px)'
           }}
           animate={{
@@ -207,7 +201,7 @@ export default function CosmicBackground() {
         />
       )}
 
-      {/* Raios de luz dinâmicos */}
+      {/* Raios de luz */}
       {!isMobile && (
         <>
           <motion.div
@@ -215,7 +209,7 @@ export default function CosmicBackground() {
             style={{
               background: isLight
                 ? 'linear-gradient(180deg, transparent, rgba(15,23,42,0.5), transparent)'
-                : 'linear-gradient(180deg, transparent, rgba(139, 92, 246, 0.5), transparent)',
+                : 'linear-gradient(180deg, transparent, rgba(53, 127, 204, 0.4), transparent)',
               transform: 'rotate(15deg)',
             }}
             animate={{
@@ -234,7 +228,7 @@ export default function CosmicBackground() {
             style={{
               background: isLight
                 ? 'linear-gradient(180deg, transparent, rgba(180,83,9,0.4), transparent)'
-                : 'linear-gradient(180deg, transparent, rgba(236, 72, 153, 0.5), transparent)',
+                : 'linear-gradient(180deg, transparent, rgba(53, 127, 204, 0.25), transparent)',
               transform: 'rotate(-20deg)',
             }}
             animate={{
@@ -275,7 +269,7 @@ export default function CosmicBackground() {
         />
       ))}
 
-      {/* Partículas flutuantes com trail */}
+      {/* Partículas flutuantes */}
       {particles.map((particle, i) => (
         <motion.div
           key={`particle-${i}`}
@@ -296,7 +290,7 @@ export default function CosmicBackground() {
             delay: particle.delay,
           }}
         >
-          <div className="w-1 h-1 rounded-full bg-gradient-to-b from-slate-800 via-amber-800 to-transparent dark:from-purple-400 dark:via-teal-400 dark:to-transparent" />
+          <div className="w-1 h-1 rounded-full bg-gradient-to-b from-slate-800 via-amber-800 to-transparent dark:from-pm-accent dark:via-pm-accent-h dark:to-transparent" />
         </motion.div>
       ))}
 
@@ -304,7 +298,7 @@ export default function CosmicBackground() {
       {!shouldSimplify && (
         <>
           <motion.div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full border border-slate-800/15 dark:border-purple-500/20"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full border border-slate-800/15 dark:border-pm-accent/20"
             animate={{
               scale: [1, 2, 1],
               opacity: [0.3, 0, 0.3],
@@ -317,7 +311,7 @@ export default function CosmicBackground() {
           />
 
           <motion.div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full border border-amber-800/15 dark:border-teal-500/20"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full border border-amber-800/15 dark:border-pm-accent/12"
             animate={{
               scale: [1, 2.5, 1],
               opacity: [0.3, 0, 0.3],
@@ -333,12 +327,12 @@ export default function CosmicBackground() {
       )}
 
       {/* Gradientes de canto */}
-      <div className="absolute top-0 left-0 w-1/3 h-1/3 bg-gradient-to-br from-slate-900/[0.04] dark:from-purple-500/20 via-transparent to-transparent blur-3xl" />
-      <div className="absolute bottom-0 right-0 w-1/3 h-1/3 bg-gradient-to-tl from-slate-900/[0.04] dark:from-teal-500/20 via-transparent to-transparent blur-3xl" />
-      <div className="absolute top-0 right-0 w-1/4 h-1/4 bg-gradient-to-bl from-slate-900/[0.03] dark:from-blue-500/15 via-transparent to-transparent blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-1/4 h-1/4 bg-gradient-to-tr from-amber-900/[0.03] dark:from-cyan-500/15 via-transparent to-transparent blur-3xl" />
+      <div className="absolute top-0 left-0 w-1/3 h-1/3 bg-gradient-to-br from-slate-900/[0.04] dark:from-pm-accent/20 via-transparent to-transparent blur-3xl" />
+      <div className="absolute bottom-0 right-0 w-1/3 h-1/3 bg-gradient-to-tl from-slate-900/[0.04] dark:from-pm-accent/15 via-transparent to-transparent blur-3xl" />
+      <div className="absolute top-0 right-0 w-1/4 h-1/4 bg-gradient-to-bl from-slate-900/[0.03] dark:from-pm-accent/10 via-transparent to-transparent blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-1/4 h-1/4 bg-gradient-to-tr from-amber-900/[0.03] dark:from-pm-accent/8 via-transparent to-transparent blur-3xl" />
 
-      {/* Arquitetura de Software - Componentes e Conexões */}
+      {/* Arquitetura de Software */}
       {!isMobile && (
         <>
           {/* Camada de Microserviços - Superior Esquerda */}
@@ -354,30 +348,30 @@ export default function CosmicBackground() {
               animate={{ y: [-5, 5, -5] }}
               transition={{ duration: 6, repeat: Infinity }}
             >
-              <div className="w-16 h-16 border-2 border-slate-800/25 dark:border-purple-500/30 rounded-lg backdrop-blur-sm bg-slate-800/[0.03] dark:bg-purple-500/5" />
+              <div className="w-16 h-16 border-2 border-slate-800/25 dark:border-pm-accent/30 rounded-lg backdrop-blur-sm bg-slate-800/[0.03] dark:bg-pm-accent/5" />
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-2 h-2 bg-amber-700 dark:bg-purple-400 rounded-full animate-pulse" />
+                <div className="w-2 h-2 bg-amber-700 dark:bg-pm-accent rounded-full animate-pulse" />
               </div>
             </motion.div>
 
             {/* Conexão horizontal */}
-            <div className="absolute top-8 left-16 w-12 h-0.5 bg-gradient-to-r from-slate-800/35 to-amber-800/30 dark:from-purple-500/30 dark:to-teal-500/30" />
-            
+            <div className="absolute top-8 left-16 w-12 h-0.5 bg-gradient-to-r from-slate-800/35 to-amber-800/30 dark:from-pm-accent/30 dark:to-pm-accent/20" />
+
             {/* Serviço 2 */}
             <motion.div
               className="absolute top-0 left-28"
               animate={{ y: [5, -5, 5] }}
               transition={{ duration: 7, repeat: Infinity, delay: 1 }}
             >
-              <div className="w-16 h-16 border-2 border-slate-800/25 dark:border-teal-500/30 rounded-lg backdrop-blur-sm bg-slate-800/[0.03] dark:bg-teal-500/5" />
+              <div className="w-16 h-16 border-2 border-slate-800/25 dark:border-pm-accent/25 rounded-lg backdrop-blur-sm bg-slate-800/[0.03] dark:bg-pm-accent/5" />
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-2 h-2 bg-slate-700 dark:bg-teal-400 rounded-full animate-pulse" />
+                <div className="w-2 h-2 bg-slate-700 dark:bg-pm-accent rounded-full animate-pulse" />
               </div>
             </motion.div>
 
-            {/* Conexão vertical para camada inferior */}
-            <div className="absolute top-16 left-8 w-0.5 h-12 bg-gradient-to-b from-slate-800/30 to-transparent dark:from-purple-500/30 dark:to-transparent" />
-            <div className="absolute top-16 left-36 w-0.5 h-12 bg-gradient-to-b from-slate-800/30 to-transparent dark:from-teal-500/30 dark:to-transparent" />
+            {/* Conexões verticais */}
+            <div className="absolute top-16 left-8 w-0.5 h-12 bg-gradient-to-b from-slate-800/30 to-transparent dark:from-pm-accent/30 dark:to-transparent" />
+            <div className="absolute top-16 left-36 w-0.5 h-12 bg-gradient-to-b from-slate-800/30 to-transparent dark:from-pm-accent/25 dark:to-transparent" />
           </motion.div>
 
           {/* Camada de Backend - Centro */}
@@ -390,28 +384,28 @@ export default function CosmicBackground() {
             {/* API Gateway */}
             <div className="relative">
               <motion.div
-                className="w-24 h-16 border-2 border-slate-800/30 dark:border-blue-500/40 rounded-xl backdrop-blur-sm bg-slate-800/[0.04] dark:bg-blue-500/10"
+                className="w-24 h-16 border-2 border-slate-800/30 dark:border-pm-accent/40 rounded-xl backdrop-blur-sm bg-slate-800/[0.04] dark:bg-pm-accent/10"
                 animate={{ scale: [1, 1.05, 1] }}
                 transition={{ duration: 5, repeat: Infinity }}
               >
-                <div className="absolute inset-0 flex items-center justify-center text-amber-800 dark:text-blue-400 text-xs font-mono opacity-60 dark:opacity-50">
+                <div className="absolute inset-0 flex items-center justify-center text-amber-800 dark:text-pm-accent text-xs font-mono opacity-60 dark:opacity-50">
                   API
                 </div>
               </motion.div>
-              
+
               {/* Conexão para banco de dados */}
-              <div className="absolute top-8 left-24 w-16 h-0.5 bg-gradient-to-r from-slate-800/35 to-amber-800/30 dark:from-blue-500/40 dark:to-cyan-500/40" />
-              
+              <div className="absolute top-8 left-24 w-16 h-0.5 bg-gradient-to-r from-slate-800/35 to-amber-800/30 dark:from-pm-accent/40 dark:to-pm-accent/25" />
+
               {/* Database Icon */}
               <motion.div
                 className="absolute top-2 left-40"
                 animate={{ rotate: [0, 360] }}
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
               >
-                <div className="w-12 h-12 border-2 border-amber-800/40 dark:border-cyan-500/40 rounded-full backdrop-blur-sm bg-amber-800/[0.05] dark:bg-cyan-500/10 flex items-center justify-center">
-                  <div className="w-6 h-6 border border-amber-800/50 dark:border-cyan-400/50 rounded-full" />
-                  <div className="absolute w-4 h-0.5 bg-amber-800/50 dark:bg-cyan-400/50 rotate-45" />
-                  <div className="absolute w-4 h-0.5 bg-amber-800/50 dark:bg-cyan-400/50 -rotate-45" />
+                <div className="w-12 h-12 border-2 border-amber-800/40 dark:border-pm-accent/35 rounded-full backdrop-blur-sm bg-amber-800/[0.05] dark:bg-pm-accent/10 flex items-center justify-center">
+                  <div className="w-6 h-6 border border-amber-800/50 dark:border-pm-accent/45 rounded-full" />
+                  <div className="absolute w-4 h-0.5 bg-amber-800/50 dark:bg-pm-accent/50 rotate-45" />
+                  <div className="absolute w-4 h-0.5 bg-amber-800/50 dark:bg-pm-accent/50 -rotate-45" />
                 </div>
               </motion.div>
             </div>
@@ -426,39 +420,39 @@ export default function CosmicBackground() {
           >
             {/* Presentation Layer */}
             <motion.div
-              className="w-32 h-10 border border-slate-800/25 dark:border-purple-500/30 rounded bg-slate-800/[0.03] dark:bg-purple-500/5 backdrop-blur-sm mb-2"
+              className="w-32 h-10 border border-slate-800/25 dark:border-pm-accent/30 rounded bg-slate-800/[0.03] dark:bg-pm-accent/5 backdrop-blur-sm mb-2"
               animate={{ x: [-3, 3, -3] }}
               transition={{ duration: 8, repeat: Infinity }}
             >
-              <div className="h-full flex items-center justify-center text-slate-800 dark:text-purple-400 text-[10px] font-mono opacity-50 dark:opacity-40">
+              <div className="h-full flex items-center justify-center text-slate-800 dark:text-pm-accent text-[10px] font-mono opacity-50 dark:opacity-40">
                 PRESENTATION
               </div>
             </motion.div>
 
             {/* Connection */}
-            <div className="w-0.5 h-3 bg-gradient-to-b from-slate-800/30 to-slate-800/25 dark:from-purple-500/30 dark:to-teal-500/30 mx-auto" />
+            <div className="w-0.5 h-3 bg-gradient-to-b from-slate-800/30 to-slate-800/25 dark:from-pm-accent/30 dark:to-pm-accent/20 mx-auto" />
 
             {/* Business Layer */}
             <motion.div
-              className="w-32 h-10 border border-slate-800/25 dark:border-teal-500/30 rounded bg-slate-800/[0.03] dark:bg-teal-500/5 backdrop-blur-sm mb-2"
+              className="w-32 h-10 border border-slate-800/25 dark:border-pm-accent/25 rounded bg-slate-800/[0.03] dark:bg-pm-accent/5 backdrop-blur-sm mb-2"
               animate={{ x: [3, -3, 3] }}
               transition={{ duration: 9, repeat: Infinity, delay: 0.5 }}
             >
-              <div className="h-full flex items-center justify-center text-slate-800 dark:text-teal-400 text-[10px] font-mono opacity-50 dark:opacity-40">
+              <div className="h-full flex items-center justify-center text-slate-800 dark:text-pm-accent text-[10px] font-mono opacity-50 dark:opacity-40">
                 BUSINESS
               </div>
             </motion.div>
 
             {/* Connection */}
-            <div className="w-0.5 h-3 bg-gradient-to-b from-slate-800/25 to-amber-800/30 dark:from-teal-500/30 dark:to-blue-500/30 mx-auto" />
+            <div className="w-0.5 h-3 bg-gradient-to-b from-slate-800/25 to-amber-800/30 dark:from-pm-accent/25 dark:to-pm-accent/20 mx-auto" />
 
             {/* Data Layer */}
             <motion.div
-              className="w-32 h-10 border border-amber-800/35 dark:border-blue-500/30 rounded bg-amber-800/[0.04] dark:bg-blue-500/5 backdrop-blur-sm"
+              className="w-32 h-10 border border-amber-800/35 dark:border-pm-accent/20 rounded bg-amber-800/[0.04] dark:bg-pm-accent/5 backdrop-blur-sm"
               animate={{ x: [-3, 3, -3] }}
               transition={{ duration: 10, repeat: Infinity, delay: 1 }}
             >
-              <div className="h-full flex items-center justify-center text-amber-800 dark:text-blue-400 text-[10px] font-mono opacity-60 dark:opacity-40">
+              <div className="h-full flex items-center justify-center text-amber-800 dark:text-pm-accent text-[10px] font-mono opacity-60 dark:opacity-40">
                 DATA
               </div>
             </motion.div>
@@ -475,11 +469,11 @@ export default function CosmicBackground() {
             <div className="relative flex items-center gap-8">
               {/* Publisher */}
               <motion.div
-                className="w-14 h-14 border-2 border-slate-800/25 dark:border-purple-500/30 rounded-full backdrop-blur-sm bg-slate-800/[0.03] dark:bg-purple-500/5 flex items-center justify-center"
+                className="w-14 h-14 border-2 border-slate-800/25 dark:border-pm-accent/30 rounded-full backdrop-blur-sm bg-slate-800/[0.03] dark:bg-pm-accent/5 flex items-center justify-center"
                 animate={{ scale: [1, 1.1, 1] }}
                 transition={{ duration: 4, repeat: Infinity }}
               >
-                <div className="w-3 h-3 bg-slate-700 dark:bg-purple-400 rounded-full" />
+                <div className="w-3 h-3 bg-slate-700 dark:bg-pm-accent rounded-full" />
               </motion.div>
 
               {/* Message Flow */}
@@ -488,17 +482,17 @@ export default function CosmicBackground() {
                 animate={{ opacity: [0.3, 1, 0.3], scaleX: [0.8, 1, 0.8] }}
                 transition={{ duration: 3, repeat: Infinity }}
               >
-                <div className="h-0.5 bg-gradient-to-r from-slate-800/35 via-slate-800/30 to-amber-800/35 dark:from-purple-500/40 dark:via-teal-500/40 dark:to-cyan-500/40" />
-                <div className="absolute right-0 -top-1 w-2 h-2 border-t-2 border-r-2 border-amber-800/40 dark:border-cyan-500/40 rotate-45" />
+                <div className="h-0.5 bg-gradient-to-r from-slate-800/35 via-slate-800/30 to-amber-800/35 dark:from-pm-accent/40 dark:via-pm-accent/30 dark:to-pm-accent/20" />
+                <div className="absolute right-0 -top-1 w-2 h-2 border-t-2 border-r-2 border-amber-800/40 dark:border-pm-accent/35 rotate-45" />
               </motion.div>
 
               {/* Subscriber */}
               <motion.div
-                className="w-14 h-14 border-2 border-amber-800/35 dark:border-cyan-500/30 rounded-full backdrop-blur-sm bg-amber-800/[0.04] dark:bg-cyan-500/5 flex items-center justify-center"
+                className="w-14 h-14 border-2 border-amber-800/35 dark:border-pm-accent/25 rounded-full backdrop-blur-sm bg-amber-800/[0.04] dark:bg-pm-accent/5 flex items-center justify-center"
                 animate={{ scale: [1, 1.1, 1] }}
                 transition={{ duration: 4, repeat: Infinity, delay: 1 }}
               >
-                <div className="w-3 h-3 bg-amber-700 dark:bg-cyan-400 rounded-full" />
+                <div className="w-3 h-3 bg-amber-700 dark:bg-pm-accent rounded-full" />
               </motion.div>
             </div>
           </motion.div>
@@ -521,10 +515,10 @@ export default function CosmicBackground() {
                   <polygon
                     points="50,5 90,27.5 90,72.5 50,95 10,72.5 10,27.5"
                     fill="none"
-                    stroke={isLight ? 'rgba(180,83,9,0.4)' : 'rgba(139, 92, 246, 0.3)'}
+                    stroke={isLight ? 'rgba(180,83,9,0.4)' : 'rgba(53, 127, 204, 0.3)'}
                     strokeWidth="2"
                   />
-                  <circle cx="50" cy="50" r="8" fill={isLight ? 'rgba(180,83,9,0.5)' : 'rgba(139, 92, 246, 0.5)'} />
+                  <circle cx="50" cy="50" r="8" fill={isLight ? 'rgba(180,83,9,0.5)' : 'rgba(53, 127, 204, 0.4)'} />
                 </svg>
               </motion.div>
 
@@ -543,7 +537,7 @@ export default function CosmicBackground() {
                     <polygon
                       points="50,10 85,30 85,70 50,90 15,70 15,30"
                       fill="none"
-                      stroke={isLight ? 'rgba(15,23,42,0.35)' : 'rgba(236, 72, 153, 0.3)'}
+                      stroke={isLight ? 'rgba(15,23,42,0.35)' : 'rgba(53, 127, 204, 0.2)'}
                       strokeWidth="3"
                     />
                   </svg>
@@ -563,7 +557,7 @@ export default function CosmicBackground() {
                       y1="64"
                       x2={x}
                       y2={y}
-                      stroke={isLight ? 'rgba(15,23,42,0.2)' : 'rgba(139, 92, 246, 0.15)'}
+                      stroke={isLight ? 'rgba(15,23,42,0.2)' : 'rgba(53, 127, 204, 0.15)'}
                       strokeWidth="1"
                     />
                   );
@@ -586,12 +580,12 @@ export default function CosmicBackground() {
                 animate={{ y: [-3, 3, -3] }}
                 transition={{ duration: 5 + idx, repeat: Infinity, delay: idx * 0.5 }}
               >
-                <div className={`w-16 h-12 border ${stage === 'DEPLOY' ? 'border-amber-800/35 dark:border-blue-500/30 bg-amber-800/[0.04] dark:bg-blue-500/5' : 'border-slate-800/25 dark:border-blue-500/30 bg-slate-800/[0.03] dark:bg-blue-500/5'} rounded backdrop-blur-sm flex items-center justify-center`}>
-                  <span className={`text-[8px] font-mono ${stage === 'DEPLOY' ? 'text-amber-800 dark:text-blue-400/40' : 'text-slate-800 dark:text-blue-400/40'} opacity-60 dark:opacity-100`}>{stage}</span>
+                <div className={`w-16 h-12 border ${stage === 'DEPLOY' ? 'border-amber-800/35 dark:border-pm-accent/30 bg-amber-800/[0.04] dark:bg-pm-accent/5' : 'border-slate-800/25 dark:border-pm-accent/30 bg-slate-800/[0.03] dark:bg-pm-accent/5'} rounded backdrop-blur-sm flex items-center justify-center`}>
+                  <span className={`text-[8px] font-mono ${stage === 'DEPLOY' ? 'text-amber-800 dark:text-pm-accent/40' : 'text-slate-800 dark:text-pm-accent/40'} opacity-60 dark:opacity-100`}>{stage}</span>
                 </div>
                 {idx < 2 && (
                   <motion.div
-                    className="absolute left-16 top-1/2 w-3 h-0.5 bg-gradient-to-r from-slate-800/35 to-transparent dark:from-blue-500/40 dark:to-transparent"
+                    className="absolute left-16 top-1/2 w-3 h-0.5 bg-gradient-to-r from-slate-800/35 to-transparent dark:from-pm-accent/35 dark:to-transparent"
                     animate={{ scaleX: [0, 1, 0] }}
                     transition={{ duration: 2, repeat: Infinity, delay: idx * 0.7 }}
                   />
@@ -604,4 +598,3 @@ export default function CosmicBackground() {
     </div>
   );
 }
-

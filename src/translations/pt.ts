@@ -8,7 +8,7 @@ export const pt = {
   // Home Page
   'home.title': 'Desenvolvedor Full Stack Júnior',
   'home.subtitle': 'Análise de Sistemas · Engenharia de Dados · Node.js · TypeScript · IA aplicada',
-  'home.intro.line1': 'Aprendo no processo. Creço na prática.',
+  'home.intro.line1': 'Aprendo no processo. Cresço na prática.',
   'home.intro.line2': 'Entrego com intenção.',
   'home.intro.description': 'Começo pelo problema, não pelo código. Mapeio atores, fluxos e regras de negócio. Defino contratos e arquitetura antes de escrever a primeira linha. Backend, dados e automação — construídos com modularidade, rastreabilidade e visão de pós-produção. IA acelera a execução, mas a direção técnica é sempre minha.',
   'home.cta.projects': 'Ver Projetos',
@@ -39,7 +39,7 @@ export const pt = {
   'about.pillar.systems.title': 'Análise de Sistemas',
   'about.pillar.systems.desc': 'Antes do código, existe um sistema a entender.\nMapeio atores, fluxos e regras de negócio.\nEspecifico requisitos com linguagem que PO, QA e Dev entendem sem tradução.\nO modelo IPO é meu contrato de clareza: sem input definido, processo descrito e output acordado, não há implementação.',
   'about.pillar.dataeng.title': 'Engenharia de Dados',
-  'about.pillar.dataeng.desc': 'Dados são o sistema antes do sistema.\nProjeto schemas pensando em consultas futuras, não apenas em armazenamento.\nModelagem relacional com normalização intencional, índices justificados e soft delete como padrão.\nETL com rastreabilidade: cada operação logada, cada transformação documentada, cada anomalia sinaliçável.',
+  'about.pillar.dataeng.desc': 'Dados são o sistema antes do sistema.\nProjeto schemas pensando em consultas futuras, não apenas em armazenamento.\nModelagem relacional com normalização intencional, índices justificados e soft delete como padrão.\nETL com rastreabilidade: cada operação logada, cada transformação documentada, cada anomalia sinalizável.',
   'about.experience.title': 'Experiência',
   'about.experience.position': 'Desenvolvedor Full Stack Júnior',
   'about.experience.period': '2023 • Atual',
